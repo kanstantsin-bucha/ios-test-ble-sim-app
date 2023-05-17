@@ -151,6 +151,10 @@ extension ViewController: CBPeripheralDelegate {
             writeResult.text = error?.localizedDescription ?? "Done"
         }
     }
+    
+    func peripheral(_ peripheral: CBPeripheral, didModifyServices invalidatedServices: [CBService]) {
+        print("didModifyServices: \(invalidatedServices)")
+    }
 }
 
 
